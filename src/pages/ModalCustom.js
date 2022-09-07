@@ -102,17 +102,17 @@ function AddUser() {
       });
 
       if (usersCreate.status === 201) {
-        
+        // eslint-disable-next-line no-restricted-globals
         var btnSts = confirm("User created successfully!");
         if (btnSts) {
           setEmail("");
           setPassword("");
         }
       } else if (usersCreate.data.errorCode == "USER_EXISTS") {
-        
+        // eslint-disable-next-line no-restricted-globals
         confirm(usersCreate.data.message);
       } else {
-        
+        // eslint-disable-next-line no-restricted-globals
         confirm("Technical error occurred");
       }
       console.log(usersCreate);
@@ -216,7 +216,7 @@ function AddTask() {
       });
       console.log(taskCreate);
       if (taskCreate.status === 201) {
-        
+        // eslint-disable-next-line no-restricted-globals
         var btnSts = confirm("Task created successfully!");
         if (btnSts) {
           setEmail("");
@@ -225,7 +225,7 @@ function AddTask() {
           setTo("");
         }
       } else if (taskCreate.name == "TokenExpiredError") {
-        
+        // eslint-disable-next-line no-restricted-globals
         let btnSts = confirm("Token Expired");
         if (btnSts) {
           navigator("/login");
@@ -233,14 +233,14 @@ function AddTask() {
           navigator("/login");
         }
       } else if (taskCreate.data.errorCode == "USER_NOT_EXISTS") {
-        
+        // eslint-disable-next-line no-restricted-globals
         let btnSts = confirm(taskCreate.data.message);
         setEmail("");
         setDesc("");
         setFrom("");
         setTo("");
       } else {
-        
+        // eslint-disable-next-line no-restricted-globals
         let btnSts = confirm("Technical error occured");
         if (btnSts) {
           navigator("/login");

@@ -31,7 +31,7 @@ function TaskList() {
       console.log(taskList);
     } else {
       console.log(taskList);
-      
+      // eslint-disable-next-line no-restricted-globals
       const tkSts = confirm("Token Expired");
       if (tkSts) {
         navigator("/login");

@@ -56,17 +56,17 @@ function SignUp() {
       });
 
       if (usersCreate.status === 201) {
-        
+        // eslint-disable-next-line no-restricted-globals
         var btnSts = confirm("User created successfully!");
         if (btnSts) {
           setEmail("");
           setPassword("");
         }
       } else if (usersCreate.data.errorCode == "USER_EXISTS") {
-       
+       // eslint-disable-next-line no-restricted-globals
         confirm(usersCreate.data.message);
       } else {
-       
+       // eslint-disable-next-line no-restricted-globals
         confirm("Technical error occurred");
       }
       console.log(usersCreate);
